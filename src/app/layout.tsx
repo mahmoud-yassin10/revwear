@@ -21,8 +21,10 @@ export const metadata: Metadata = {
   description:
     "RevWear blends automotive performance with premium streetwear. Limited drops, engineered fabrics, and a clean black/white/red system.",
   icons: {
-    icon: "/brand/revwear-logo-square.png",
-    shortcut: "/brand/revwear-logo-square.png",
+    icon: [
+      { url: "/brand/revwear-logo-square.png", sizes: "any" },
+      { url: "/brand/revwear-logo-square.png", rel: "shortcut icon" },
+    ],
     apple: "/brand/revwear-logo-square.png",
   },
   openGraph: {

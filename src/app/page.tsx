@@ -76,38 +76,18 @@ export default function Home() {
           </div>
 
           <div className="relative animate-fade-in lg:justify-self-end">
-            <div className="overflow-hidden rounded-xl border border-border shadow-[0_30px_80px_-40px_rgba(0,0,0,0.8)]">
+            <div className="flex h-[520px] w-full max-w-[620px] items-center justify-center">
               <Image
-                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1400&q=80"
-                alt="RevWear collection"
-                width={1200}
-                height={1200}
-                className="h-[520px] w-full object-cover"
+                src="/brand/revwear-logo-square.png"
+                alt="RevWear logo"
+                width={700}
+                height={700}
+                className="h-full w-full object-contain"
                 priority
               />
             </div>
             <div className="absolute -left-8 top-8 hidden h-16 w-16 items-center justify-center rounded-full border border-border bg-card/90 text-accent lg:flex">
               <Waves className="h-6 w-6" />
-            </div>
-            <div className="absolute right-6 bottom-6 hidden max-w-[320px] flex-col gap-3 rounded-xl border border-border bg-black/85 px-5 py-4 shadow-[0_24px_70px_-28px_rgba(0,0,0,0.75)] backdrop-blur lg:flex">
-              <div className="flex items-center gap-3">
-                <Image
-                  src="/brand/revwear-logo-square.png"
-                  alt="RevWear logo"
-                  width={56}
-                  height={56}
-                  className="h-14 w-14 rounded-md border border-border shadow-sm"
-                />
-                <div className="space-y-1">
-                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gray-200">
-                    Official Drop
-                  </p>
-                  <p className="text-xs text-gray-400">RevWear limited release</p>
-                </div>
-              </div>
-              <div className="w-fit rounded-full border border-border bg-card/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-accent">
-                Built to move
-              </div>
             </div>
           </div>
         </div>
