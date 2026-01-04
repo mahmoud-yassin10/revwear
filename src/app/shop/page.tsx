@@ -16,31 +16,39 @@ export const metadata: Metadata = {
 
 export default function ShopPage() {
   return (
-    <div className="container py-12">
-      <div className="flex flex-col gap-4 rounded-lg border border-border bg-card p-6 md:flex-row md:items-center md:justify-between">
-        <div className="space-y-2">
-          <Badge variant="solid" className="w-fit">
-            New
-          </Badge>
-          <h1 className="text-3xl font-semibold">Shop the grid</h1>
-          <p className="max-w-2xl text-sm text-gray-400">
-            Filter by category, size, and price. Every piece is built for motion
-            and crafted in limited runs.
-          </p>
-        </div>
-        <div className="flex items-center gap-3">
-          <Sparkles className="h-5 w-5 text-accent" />
-          <p className="text-sm text-gray-300">
-            Free shipping on orders over $150 in the continental US.
-          </p>
+    <div className="container py-12 space-y-8 animate-fade-in">
+      <div className="rounded-lg border border-border bg-card p-6 shadow-[0_0_0_1px_rgba(228,36,36,0.08)]">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="space-y-2">
+            <Badge variant="solid" className="w-fit">
+              New
+            </Badge>
+            <h1 className="text-3xl font-semibold">Shop the grid</h1>
+            <p className="max-w-2xl text-sm text-gray-400">
+              Filter by category, size, and price. Every piece is built for motion and
+              crafted in limited runs.
+            </p>
+            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.12em] text-gray-400">
+              <Badge variant="muted">Hoodies</Badge>
+              <Badge variant="muted">Outerwear</Badge>
+              <Badge variant="muted">Tees</Badge>
+              <Badge variant="muted">Accessories</Badge>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 rounded-md border border-border bg-card px-4 py-3">
+            <Sparkles className="h-5 w-5 text-accent" />
+            <p className="text-sm text-gray-300">
+              Free shipping on orders over EGP 5,000 in the continental US.
+            </p>
+          </div>
         </div>
       </div>
 
-      <Separator className="my-8" />
+      <Separator />
 
       <ShopGrid products={products} />
 
-      <div className="mt-12 flex flex-col gap-4 rounded-lg border border-border bg-black/60 p-6 md:flex-row md:items-center md:justify-between">
+      <div className="flex flex-col gap-4 rounded-lg border border-border bg-black/60 p-6 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-3">
           <Filter className="h-5 w-5 text-accent" />
           <div>

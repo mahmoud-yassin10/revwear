@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Gauge, Shield, Sparkles } from "lucide-react";
+import { ArrowRight, Gauge, Shield, Sparkles, Waves } from "lucide-react";
 
 import { ProductCard } from "@/components/product-card";
 import { Badge } from "@/components/ui/badge";
@@ -12,21 +12,23 @@ const featuredProducts = products.filter((product) => product.featured);
 
 export default function Home() {
   return (
-    <div className="bg-black text-foreground">
-      <section className="relative overflow-hidden border-b border-border">
-        <div className="container grid gap-10 py-16 lg:grid-cols-2 lg:items-center">
-          <div className="space-y-6">
-            <Badge variant="solid" className="w-fit">
-              Drop 01 · Limited Release
-            </Badge>
-            <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Performance streetwear for people who move fast.
-            </h1>
-            <p className="max-w-2xl text-lg text-gray-300">
-              Engineered fabrics, automotive cues, and silhouettes that stay
-              sharp. Designed for the garage, the grid, and the night drive
-              after.
-            </p>
+    <div className="bg-background text-foreground">
+      <section className="relative overflow-hidden border-b border-border/70 bg-background animate-fade-in">
+        <div className="absolute left-0 top-0 h-full w-px bg-accent/60" aria-hidden />
+        <div className="container grid gap-12 py-16 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+          <div className="space-y-8 animate-slide-up">
+            <div className="space-y-3">
+              <Badge variant="solid" className="w-fit">
+                Drop 01 · Limited Release
+              </Badge>
+              <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+                Performance streetwear for people who move fast.
+              </h1>
+              <p className="max-w-2xl text-lg text-gray-300">
+                Engineered fabrics, automotive cues, and silhouettes that stay sharp. Built
+                for the garage, the grid, and the night drive after.
+              </p>
+            </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button asChild size="lg">
                 <Link href="/shop">Shop Now</Link>
@@ -37,41 +39,81 @@ export default function Home() {
                 </Link>
               </Button>
             </div>
-            <div className="grid gap-6 pt-6 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-3">
               {[
                 { title: "Premium fabric", desc: "Double-knit, breathable, built to last." },
-                { title: "Car-culture DNA", desc: "Motorsport cues without the loud logos." },
-                { title: "Limited drops", desc: "Small batches, numbered runs, never mass." },
+                { title: "Car-culture DNA", desc: "Motorsport cues without loud logos." },
+                { title: "Limited drops", desc: "Small batches, numbered runs." },
               ].map((item) => (
-                <div key={item.title} className="space-y-2 rounded-lg border border-border bg-card p-4">
-                  <p className="text-sm uppercase tracking-[0.14em] text-gray-400">
+                <div
+                  key={item.title}
+                  className="space-y-2 rounded-lg border border-border bg-card/80 p-4"
+                >
+                  <p className="text-xs uppercase tracking-[0.14em] text-gray-400">
                     {item.title}
                   </p>
                   <p className="text-sm text-gray-300">{item.desc}</p>
                 </div>
               ))}
             </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {[
+                { label: "02", meta: "Current drops" },
+                { label: "18", meta: "Styles in rotation" },
+                { label: "3K", meta: "Community signups" },
+              ].map((stat) => (
+                <div
+                  key={stat.meta}
+                  className="flex items-center justify-between rounded-lg border border-border bg-black/60 px-4 py-3"
+                >
+                  <span className="text-2xl font-semibold text-accent">{stat.label}</span>
+                  <span className="text-xs uppercase tracking-[0.14em] text-gray-400">
+                    {stat.meta}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="relative">
-            <div className="overflow-hidden rounded-xl border border-border">
+          <div className="relative animate-fade-in lg:justify-self-end">
+            <div className="overflow-hidden rounded-xl border border-border shadow-[0_30px_80px_-40px_rgba(0,0,0,0.8)]">
               <Image
                 src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1400&q=80"
                 alt="RevWear collection"
                 width={1200}
                 height={1200}
-                className="h-full w-full object-cover"
+                className="h-[520px] w-full object-cover"
                 priority
               />
             </div>
-            <div className="absolute -right-6 bottom-6 hidden rounded-full border border-border bg-black/70 px-5 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-accent backdrop-blur lg:block">
-              Built to move
+            <div className="absolute -left-8 top-8 hidden h-16 w-16 items-center justify-center rounded-full border border-border bg-card/90 text-accent lg:flex">
+              <Waves className="h-6 w-6" />
+            </div>
+            <div className="absolute right-6 bottom-6 hidden max-w-[320px] flex-col gap-3 rounded-xl border border-border bg-black/85 px-5 py-4 shadow-[0_24px_70px_-28px_rgba(0,0,0,0.75)] backdrop-blur lg:flex">
+              <div className="flex items-center gap-3">
+                <Image
+                  src="/brand/revwear-logo-square.png"
+                  alt="RevWear logo"
+                  width={56}
+                  height={56}
+                  className="h-14 w-14 rounded-md border border-border shadow-sm"
+                />
+                <div className="space-y-1">
+                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gray-200">
+                    Official Drop
+                  </p>
+                  <p className="text-xs text-gray-400">RevWear limited release</p>
+                </div>
+              </div>
+              <div className="w-fit rounded-full border border-border bg-card/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-accent">
+                Built to move
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="container py-14">
+      <section className="container py-14 animate-fade-in">
         <div className="flex items-center justify-between gap-4">
           <div>
             <p className="text-xs uppercase tracking-[0.16em] text-gray-400">
@@ -92,7 +134,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-card/60">
+      <section className="border-y border-border bg-card/70 animate-fade-in">
         <div className="container grid gap-8 py-12 md:grid-cols-3">
           {[
             {
@@ -111,7 +153,10 @@ export default function Home() {
               icon: <Shield className="h-5 w-5 text-accent" />,
             },
           ].map((item) => (
-            <div key={item.title} className="space-y-3 rounded-lg border border-border bg-black/60 p-6">
+            <div
+              key={item.title}
+              className="space-y-3 rounded-lg border border-border bg-black/70 p-6"
+            >
               <div className="flex items-center gap-3">
                 {item.icon}
                 <h3 className="text-base font-semibold">{item.title}</h3>
@@ -122,7 +167,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container py-12">
+      <section className="container py-12 animate-fade-in">
         <div className="flex flex-col gap-6 rounded-lg border border-border bg-card p-6 md:flex-row md:items-center md:justify-between">
           <div className="space-y-2">
             <p className="text-xs uppercase tracking-[0.14em] text-gray-400">

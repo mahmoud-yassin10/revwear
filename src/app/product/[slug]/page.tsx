@@ -47,7 +47,7 @@ export default function ProductPage({ params }: Props) {
     .slice(0, 3);
 
   return (
-    <div className="container py-10">
+    <div className="container py-10 animate-fade-in">
       <Link
         href="/shop"
         className="mb-6 inline-flex items-center gap-2 text-sm text-gray-400 transition hover:text-accent"
@@ -112,23 +112,38 @@ export default function ProductPage({ params }: Props) {
 
           <AddToCartForm product={product} />
 
-          <div className="space-y-3" id="details">
-            <Separator />
+          <div className="space-y-4 rounded-lg border border-border bg-black/70 p-4" id="details">
             <div className="flex items-center gap-3 text-sm text-gray-300">
               <ShieldCheck className="h-5 w-5 text-accent" />
-              Premium build: double-stitched seams, matte hardware, soft-touch
-              lining.
+              Premium build: double-stitched seams, matte hardware, soft-touch lining.
             </div>
             <div className="flex items-center gap-3 text-sm text-gray-300">
               <Truck className="h-5 w-5 text-accent" />
               Ships in 2–3 business days. Free exchanges on first order.
             </div>
-            <Link
-              href="/size-guide"
-              className="inline-flex items-center gap-2 text-sm text-accent transition hover:text-accent/80"
-            >
-              View size guide
-            </Link>
+            <div className="grid gap-3 border-t border-border pt-3 text-sm text-gray-300 sm:grid-cols-2">
+              <div className="space-y-1">
+                <p className="text-xs uppercase tracking-[0.12em] text-gray-500">Fabric</p>
+                <p>Performance cotton blend, anti-pilling, soft interior.</p>
+              </div>
+              <div className="space-y-1">
+                <p className="text-xs uppercase tracking-[0.12em] text-gray-500">Care</p>
+                <p>Cold wash, line dry. Do not tumble or bleach.</p>
+              </div>
+              <div className="space-y-1">
+                <p className="text-xs uppercase tracking-[0.12em] text-gray-500">Fit</p>
+                <p>Tailored block with room to layer. True to size.</p>
+              </div>
+              <div className="space-y-1">
+                <p className="text-xs uppercase tracking-[0.12em] text-gray-500">Size guide</p>
+                <Link
+                  href="/size-guide"
+                  className="inline-flex items-center gap-2 text-accent transition hover:text-accent/80"
+                >
+                  View measurements
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

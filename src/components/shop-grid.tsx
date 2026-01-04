@@ -123,7 +123,7 @@ export function ShopGrid({ products }: { products: Product[] }) {
         <div className="grid w-full grid-cols-2 gap-3 sm:max-w-xs">
           <div className="space-y-1">
             <Label htmlFor="minPrice" className="text-xs uppercase tracking-[0.12em]">
-              Min $
+              Min EGP
             </Label>
             <Input
               id="minPrice"
@@ -139,7 +139,7 @@ export function ShopGrid({ products }: { products: Product[] }) {
           </div>
           <div className="space-y-1">
             <Label htmlFor="maxPrice" className="text-xs uppercase tracking-[0.12em]">
-              Max $
+              Max EGP
             </Label>
             <Input
               id="maxPrice"

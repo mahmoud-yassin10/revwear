@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Ruler, Shirt } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 export const metadata: Metadata = {
@@ -21,19 +22,26 @@ const sizeChart = [
 
 export default function SizeGuidePage() {
   return (
-    <div className="container py-10">
-      <div className="space-y-3">
-        <Badge variant="solid" className="w-fit">
-          Fit guide
-        </Badge>
-        <h1 className="text-3xl font-semibold">Dialed fits, tuned for motion.</h1>
-        <p className="text-sm text-gray-400">
-          Slim-but-not-tight through the body, with room to layer. If between
-          sizes, size up for a relaxed feel.
-        </p>
+    <div className="container py-10 space-y-8 animate-fade-in">
+      <div className="rounded-lg border border-border bg-card p-6">
+        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div className="space-y-2">
+            <Badge variant="solid" className="w-fit">
+              Fit guide
+            </Badge>
+            <h1 className="text-3xl font-semibold">Dialed fits, tuned for motion.</h1>
+            <p className="text-sm text-gray-400">
+              Slim-but-not-tight through the body, with room to layer. If between sizes,
+              size up for a relaxed feel.
+            </p>
+          </div>
+          <Button variant="secondary" className="w-full sm:w-auto">
+            Talk to fit support
+          </Button>
+        </div>
       </div>
 
-      <div className="mt-8 overflow-hidden rounded-lg border border-border">
+      <div className="overflow-hidden rounded-lg border border-border bg-card">
         <table className="w-full border-collapse text-left text-sm">
           <thead className="bg-muted text-gray-300">
             <tr>
@@ -45,7 +53,7 @@ export default function SizeGuidePage() {
           </thead>
           <tbody>
             {sizeChart.map((row) => (
-              <tr key={row.size} className="border-t border-border">
+              <tr key={row.size} className="border-t border-border/80">
                 <td className="px-4 py-3 font-semibold">{row.size}</td>
                 <td className="px-4 py-3 text-gray-300">{row.chest}</td>
                 <td className="px-4 py-3 text-gray-300">{row.waist}</td>
@@ -56,7 +64,7 @@ export default function SizeGuidePage() {
         </table>
       </div>
 
-      <div className="mt-8 grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2">
         <div className="rounded-lg border border-border bg-card p-6">
           <div className="flex items-center gap-3">
             <Ruler className="h-5 w-5 text-accent" />
@@ -79,6 +87,17 @@ export default function SizeGuidePage() {
             <li>Outerwear is articulated through the elbows for movement.</li>
           </ul>
         </div>
+      </div>
+
+      <Separator />
+
+      <div className="rounded-lg border border-border bg-card p-6 text-sm text-gray-300">
+        <p className="font-semibold text-foreground">Fit tips</p>
+        <ul className="mt-3 grid gap-2 md:grid-cols-3">
+          <li>Between sizes? size up for layering, down for a sharper profile.</li>
+          <li>Check product pages for fabric weight notes (light/mid/heavy).</li>
+          <li>Drop shoulders on hoodies; tees keep a clean, set-in sleeve.</li>
+        </ul>
       </div>
     </div>
   );

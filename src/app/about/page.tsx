@@ -26,7 +26,7 @@ const pillars = [
 
 export default function AboutPage() {
   return (
-    <div className="container py-10">
+    <div className="container py-10 animate-fade-in">
       <div className="grid gap-8 md:grid-cols-[1.4fr,1fr] md:items-center">
         <div className="space-y-4">
           <Badge variant="solid" className="w-fit">

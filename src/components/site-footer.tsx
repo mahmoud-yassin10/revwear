@@ -8,7 +8,7 @@ import { Separator } from "./ui/separator";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border/80 bg-black">
+    <footer className="border-t border-border/80 bg-background">
       <div className="container py-12">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="space-y-4 md:col-span-2">

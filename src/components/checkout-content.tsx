@@ -17,7 +17,7 @@ export function CheckoutContent() {
 
   if (items.length === 0) {
     return (
-      <div className="container flex min-h-[60vh] flex-col items-center justify-center gap-4 text-center">
+      <div className="container flex min-h-[60vh] flex-col items-center justify-center gap-4 text-center animate-fade-in">
         <ShoppingBag className="h-10 w-10 text-accent" />
         <h1 className="text-2xl font-semibold">Your cart is empty.</h1>
         <p className="text-sm text-gray-400">
@@ -31,7 +31,7 @@ export function CheckoutContent() {
   }
 
   return (
-    <div className="container py-10">
+    <div className="container py-10 animate-fade-in">
       <div className="flex flex-col gap-2">
         <p className="text-xs uppercase tracking-[0.14em] text-gray-400">
           Checkout

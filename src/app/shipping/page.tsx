@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const shippingPoints = [
   "Orders ship within 2–3 business days.",
-  "Free domestic shipping on orders over $150.",
+  "Free domestic shipping on orders over EGP 5,000.",
   "Express options available at checkout for select regions.",
   "Tracking numbers are emailed once your order leaves the warehouse.",
 ];

@@ -8,6 +8,7 @@ import { Menu, ShoppingBag } from "lucide-react";
 import { useCart } from "./cart-provider";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { ThemeToggle } from "./theme-toggle";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -21,9 +22,9 @@ export function SiteHeader() {
   const { count } = useCart();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-black/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/90 backdrop-blur-md">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3 animate-fade-in">
           <Image
             src="/brand/revwear-logo-square.png"
             alt="RevWear"
@@ -67,6 +68,9 @@ export function SiteHeader() {
               </span>
             )}
           </Link>
+          <div className="hidden md:block">
+            <ThemeToggle />
+          </div>
 
           <Sheet>
             <SheetTrigger asChild>
@@ -97,6 +101,9 @@ export function SiteHeader() {
                   <ShoppingBag className="h-5 w-5" />
                   Cart ({count})
                 </Link>
+                <div className="pt-2">
+                  <ThemeToggle />
+                </div>
                 <Button asChild>
                   <Link href="/shop">Shop the Drop</Link>
                 </Button>
