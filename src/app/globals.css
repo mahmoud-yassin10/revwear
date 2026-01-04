@@ -13,12 +13,12 @@
 }
 
 [data-theme="light"] {
-  --background: 210 14% 97%;
-  --foreground: 220 13% 12%;
+  --background: 210 14% 95%;
+  --foreground: 220 15% 12%;
   --accent: 355 74% 45%;
-  --muted: 210 16% 93%;
-  --border: 210 16% 85%;
-  --card: 0 0% 100%;
+  --muted: 210 18% 90%;
+  --border: 214 16% 80%;
+  --card: 0 0% 99%;
   color-scheme: light;
 }
 

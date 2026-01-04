@@ -24,10 +24,10 @@ export default function Home() {
               <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
                 Performance streetwear for people who move fast.
               </h1>
-              <p className="max-w-2xl text-lg text-gray-300">
-                Engineered fabrics, automotive cues, and silhouettes that stay sharp. Built
-                for the garage, the grid, and the night drive after.
-              </p>
+            <p className="max-w-2xl text-lg text-gray-700 dark:text-gray-300">
+              Engineered fabrics, automotive cues, and silhouettes that stay sharp. Built
+              for the garage, the grid, and the night drive after.
+            </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button asChild size="lg">
@@ -49,10 +49,10 @@ export default function Home() {
                   key={item.title}
                   className="space-y-2 rounded-lg border border-border bg-card/80 p-4"
                 >
-                  <p className="text-xs uppercase tracking-[0.14em] text-gray-400">
+                  <p className="text-xs uppercase tracking-[0.14em] text-gray-600 dark:text-gray-400">
                     {item.title}
                   </p>
-                  <p className="text-sm text-gray-300">{item.desc}</p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -67,7 +67,7 @@ export default function Home() {
                   className="flex items-center justify-between rounded-lg border border-border bg-card px-4 py-3"
                 >
                   <span className="text-2xl font-semibold text-accent">{stat.label}</span>
-                  <span className="text-xs uppercase tracking-[0.14em] text-gray-400">
+                  <span className="text-xs uppercase tracking-[0.14em] text-gray-600 dark:text-gray-400">
                     {stat.meta}
                   </span>
                 </div>
@@ -141,7 +141,7 @@ export default function Home() {
                 {item.icon}
                 <h3 className="text-base font-semibold">{item.title}</h3>
               </div>
-              <p className="text-sm text-gray-400">{item.copy}</p>
+              <p className="text-sm text-gray-700 dark:text-gray-400">{item.copy}</p>
             </div>
           ))}
         </div>
