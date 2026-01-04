@@ -64,7 +64,7 @@ export default function Home() {
               ].map((stat) => (
                 <div
                   key={stat.meta}
-                  className="flex items-center justify-between rounded-lg border border-border bg-black/60 px-4 py-3"
+                  className="flex items-center justify-between rounded-lg border border-border bg-card px-4 py-3"
                 >
                   <span className="text-2xl font-semibold text-accent">{stat.label}</span>
                   <span className="text-xs uppercase tracking-[0.14em] text-gray-400">
@@ -135,7 +135,7 @@ export default function Home() {
           ].map((item) => (
             <div
               key={item.title}
-              className="space-y-3 rounded-lg border border-border bg-black/70 p-6"
+              className="space-y-3 rounded-lg border border-border bg-card p-6"
             >
               <div className="flex items-center gap-3">
                 {item.icon}
