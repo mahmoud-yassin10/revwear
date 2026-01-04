@@ -13,13 +13,13 @@
 }
 
 [data-theme="light"] {
-  --background: 0 0% 98%;
-  --foreground: 0 0% 6%;
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
   --accent: 355 70% 42%;
-  --muted: 0 0% 96%;
-  --border: 0 0% 86%;
-  --card: 0 0% 99%;
-  color-scheme: light;
+  --muted: 0 0% 4%;
+  --border: 0 0% 10%;
+  --card: 0 0% 2%;
+  color-scheme: dark;
 }
 
 ::selection {
